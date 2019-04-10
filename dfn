@@ -1,0 +1,35 @@
+[33mcommit 84aeb36539baa8669257dc865608e9f42baebf3e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: shubhamsks <shubhamkumar7051@gmail.com>
+Date:   Fri Apr 5 10:21:17 2019 +0530
+
+    Finished the whole the backend stuff
+
+[33mcommit b73004a4e920179ba7fa17750de3f286f94709bc[m
+Author: shubhamsks <shubhamkumar7051@gmail.com>
+Date:   Thu Apr 4 16:57:38 2019 +0530
+
+    Added a delete view for confirming the delete of comment and there is a little error in the frontend bootstrap class and css class is not working on messages tags
+
+[33mcommit 82dc4974ad8c43829c65d9e91d356bc0ea080278[m
+Author: shubhamsks <shubhamkumar7051@gmail.com>
+Date:   Wed Apr 3 12:55:07 2019 +0530
+
+    bug aroused here
+
+[33mcommit 11e0a3e931243b9de3af51c13b464b5f81cf2019[m
+Author: shubhamsks <shubhamkumar7051@gmail.com>
+Date:   Wed Apr 3 11:36:21 2019 +0530
+
+    added Comment to the Posts and Comment thread
+
+[33mcommit 6f6af40e37343bd59ee055d04101361c49e154aa[m
+Author: shubhamsks <shubhamkumar7051@gmail.com>
+Date:   Thu Mar 28 18:53:21 2019 +0530
+
+    Removed a embedded git repo markdown
+
+[33mcommit 02c08990a67ac6582c8922f70a9e214968362a2c[m
+Author: shubhamsks <shubhamkumar7051@gmail.com>
+Date:   Thu Mar 28 18:51:00 2019 +0530
+
+    Added Comments to the posts

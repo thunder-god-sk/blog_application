@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+{% load crispy_forms_tags %}
+{% load markdown_deux_tags %} {% block content %}
+<div class="col-sm-6  card  mt-5 mb-5 pt-2 pb-2 pr-2 pl-2col-sm-offset-3">
+    <h1>Confirm delete</h1>
+    <form method="POST">{% csrf_token %}
+       <h2> Are you sure you want to delete "{{object.comentText}}" </h2>
+       ,<input type="submit" value="Confirm" class="btn btn-outline-danger">
+      <a href="{{ object.get_absolute_url }}" class="btn btn-outline-success">Cancel</a>
+    </form>
+    <hr/>
+</div>
+
+{% endblock content %}

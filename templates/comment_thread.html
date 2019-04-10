@@ -1,0 +1,41 @@
+{% extends "base.html" %} 
+{% load crispy_forms_tags %}
+{% load markdown_deux_tags %} {% block content %}
+<div class="col-md-7">
+  <div class="media-body">
+    <div class="page-header">
+    <h3 class="mt-0">{{ comment.user }}</h3>
+  </div>
+       <p> {{comment.comentText }}</p>
+    <footer class="blockquote-footer"> {{comment.timestamp|timesince }} ago 
+      {% if comment.childrens.count > 0 %} {{ comment.childrens.count }} Comments | {% endif %}</footer>
+      {% if comment.user == user %} <a class="btn btn-danger" href="{% url 'comments:comment_delete' comment.id %}">Delete</a>{% endif %}
+      <hr/>
+    <div class="comment-reply">
+      {% for child_comment in comment.childrens %}
+      <div class="replies ml-4">
+          <div class="page-header">
+        <h3 class="mt-0">{{ child_comment.user }}</h3>
+        </div>
+        <p class="lead">{{child_comment.comentText }}</p>
+     <footer class="blockquote-footer">via {{ child_comment.user }}| {{child_comment.timestamp|timesince }} ago</footer>
+      </div>
+    {% endfor %}
+    <div class="comments card my-4">
+        <h5 class="lead card-header">Leave a Reply </h5>
+        <div class="card-body">
+  <form action="." method="POST">
+      {% csrf_token %}
+      {{ comment_form|crispy }}
+      <div class="form-group">
+      <input type="hidden"  name="parent_id" value="{{ comment.id }}">
+      <input type="submit" value="Reply " class="btn btn-dark">
+    </div>
+    </form>
+    </div>
+    </div>
+    <hr/>
+</div>
+</div>
+</div>
+{% endblock content %}

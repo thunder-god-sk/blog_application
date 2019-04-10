@@ -1,0 +1,112 @@
+{% load static %} {% load markdown_deux_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>{% block head_title %} Post Home {% endblock head_title %}</title>
+		<link rel = 'stylesheet' href="{% static "css/base.css" %}" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		{% block head_extra %} {% endblock head_extra %}
+	</head>
+	<style></style>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
+			<div class="container">
+				<a href="{% url 'posts:post-list' %}" class="navbar-brand"
+					>Coder's blog</a>
+				
+
+				<button
+					class="navbar-toggler collapsed"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarResponsive"
+					aria-controls="navbarResponsive"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse" id="navbarResponsive" style="">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="{% url 'posts:post-list' %}"
+								>Home
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						{% if user.is_authenticated %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'users:profile' %}">Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'users:logout' %}">Logout</a>
+						</li>
+						{% if user.is_staff or user.is_superuser %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'posts:post-create' %}"
+								>New Post</a
+							>
+						</li>
+						{% endif %} {% else %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'users:register' %}">Signup</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'users:login' %}">Login</a>
+						</li>
+						{% endif %}
+					</ul>
+					<form class="form-inline" role="search" method="GET">
+						<input
+							class="search js-search form-control form-control-rounded mr-sm-2"
+							type="text"
+							value="{{ request.GET.q }}"
+							name="q"
+							title="Enter search query here.."
+							placeholder="Search.."
+							aria-label="Search"
+						/>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div class="container pt-5 mt-4">
+			{% if messages %} {% for message in messages %}
+			<div class="alert alert-{{ message.tags }} mt-2 card col-sm-8">
+				{{ message }}
+			</div>
+			{% endfor %} {% endif %} {% block content %} {% endblock content %}
+		</div>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="http://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"
+		></script>
+		<script type="text/javascript">
+			$("img").addClass("img-fluid");
+			$(".comment-reply-btn").click(function(event) {
+				event.preventDefault();
+				$(this)
+					.parent()
+					.next(".comment-reply")
+					.fadeToggle();
+			});
+		</script>
+	</body>
+</html>

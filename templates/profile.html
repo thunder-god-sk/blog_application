@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags  %}
+{% block content%}
+<div class="col-sm-8 card mt-5 pt-2 pl-2 pr-2 pb-2">
+    <h2 class="mt-2">{{user.username}} </h2>
+    <p>{{ user.email }}</p>
+<form action="" method="POST">{% csrf_token %}
+    <legend class="border-bottom mb-4">
+        Profile info
+    </legend>
+    {{ update_form|crispy }}
+    <input type="submit" value="Update" class="btn btn-outline-dark mb-4">
+</form>
+</div>
+{% endblock content %}

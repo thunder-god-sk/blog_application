@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% load static %} 
+{% load crispy_forms_tags %}
+{% block head_extra %}
+{{ form.media }}
+{% endblock head_extra %} {% block content %}
+<div class="row">
+<div class="col-sm-6 card">
+  <h1>Preview</h1>
+  <div class="content-preview">
+    <h3 id="preview-title"></h3>
+    <p id="preview-content"></p>
+  </div>
+</div>
+
+<div class="col-sm-4">
+  <h1>Form</h1>
+  <form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-primary" value="create Post" />
+  </form>
+</div>
+</div>
+<script
+  src="http://code.jquery.com/jquery-1.12.2.min.js"
+  integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="
+  crossorigin="anonymous"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+<script type="text/javascript">
+  let titleItem = $("#id_title");
+  let contentItem = $("#id_content");
+  function setTitle(value) {
+    let titleValue = value;
+    $("#preview-title").text(titleValue);
+  }
+  setTitle(titleItem.val());
+  titleItem.keyup(function() {
+    let titleInputText = $(this).val();
+    setTitle(titleInputText);
+  });
+
+  function setContent(value) {
+    let markedContent = marked(value);
+    $("#preview-content").html(markedContent);
+    $("#preview-content img").each(function() {
+      $(this).addClass("img-fluid");
+    });
+  }
+  setContent(contentItem.val());
+  contentItem.keyup(function() {
+    let newValue = $(this).val();
+    setContent(newValue);
+  });
+</script>
+{% endblock %}

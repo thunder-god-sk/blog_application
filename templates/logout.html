@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="col-sm-8 mt-5 pt-5 pb-5 pl-3 pr-3 card">
+<h1>You have been logged out</h1>
+<p> Log in again <a href="{% url 'users:login' %}">here</a></p>
+</div>
+{% endblock content %}
