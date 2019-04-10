@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% load markdown_deux_tags %}
 {% block content %}
+{% load static %}
 
 <div class="row mt-2">
   <div class="col-sm-8">
   {% for post in posts %}
   <div class="card  mt-2 mb-2 pl-3 pr-3">
         <div class="page-header">
-          <a href="{{ post.get_absolute_url }}" style="color:black"> <h1> {{post.title}}</h1></a>
+          <a href="{{ post.get_absolute_url }}" class="title"> <h1> {{post.title}}</h1></a>
         </div>
 
          <p class="text-muted" >
@@ -19,7 +20,7 @@
         {% endif %} 
         <p id="content" class="content-markdown">
           {{ post.content|markdown |linebreaks|truncatechars_html:400 }}
-          <a href="{{  post.get_absolute_url }}"style="color:black">Read more </a>
+          <a href="{{  post.get_absolute_url }}" >Read more </a>
         </p>
     </div>
     {% endfor %}
