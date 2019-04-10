@@ -23,7 +23,7 @@ SECRET_KEY = 'c8@ifx)@i$zps@!hl^@%^-+5)7h+^_%d^7b4=e+3)*+9ca92@y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'codersblog.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'hackersblog.pythonanywhere.com']
 
 
 # Application definition
