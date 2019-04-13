@@ -1,5 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "myvenv/bin/python3"
+    "python.pythonPath": "myvenv/bin/python3",
+    "python.formatting.provider": "yapf"
 }

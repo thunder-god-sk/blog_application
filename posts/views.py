@@ -11,12 +11,12 @@ from django.db.models import Q
 from django.contrib.contenttypes.models import ContentType
 from comments.models import Comment
 from comments.forms import CommentForm
+from django.contrib.auth.decorators import login_required
 # This View is used to create the post
 # @param request This is common for all views and is used because in
 # web we use request to do almost every thing like http Get Request and post request
 # this method use the form that is created in forms.py to form a post and then save it
 # if it is valid
-
 
 def post_create(request):
     if not request.user.is_staff or not request.user.is_superuser:
@@ -69,7 +69,9 @@ def post_detail(request, pk=None):
             parent_qs = Comment.objects.filter(id=parent_id)
             if parent_qs.exists() and parent_qs.count() == 1:
                 parent_obj = parent_qs.first()
-
+        if not request.user.is_authenticated:
+            messages.info(request,"Login to comment ")
+            return redirect('users:login')
         new_comment, created = Comment.objects.get_or_create(
             user=request.user,
             content_type=content_type,
