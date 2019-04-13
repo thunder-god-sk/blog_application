@@ -8,19 +8,23 @@
   {% for post in posts %}
   <div class="card  mt-2 mb-2 pl-3 pr-3">
         <div class="page-header">
-          <a href="{{ post.get_absolute_url }}"  style="color:black"> <h1> {{post.title}}</h1></a>
+          <a href="{{ post.get_absolute_url }}"  style="color:black"> <h2> {{post.title}}</h2></a>
         </div>
 
          <p class="text-muted" >
         {% if post.user %}
+        {% if post.user.is_staff or post.user.is_admin %}
+        Posted by <span class="badge badge-pill badge-info">Admin</span><a href=""> {{ post.user }} </a> 
+        {% else %}
         Posted by <a href=""> {{ post.user }} </a>
+        {% endif %}
         {% endif %} on {{ post.timestamp }}</p>
         {% if post.image %}
-        <img src="{{ post.image.url }}" class="img-fluid ml-2 mr-4 mt-2 mb-2" />
+        <img src="{{ post.image.url }}" class="img-fluid ml-2 mr-4 mt-2 mb-0" />
         {% endif %} 
-        <p id="content" class="content-markdown">
+        <p id="content mt-0" class="content-markdown">
           {{ post.content|markdown |linebreaks|truncatechars_html:400 }}
-          <a href="{{ post.get_absolute_url }}" style="color:black" >Read more </a>
+          <a href="{{ post.get_absolute_url }}">(more) </a>
         </p>
     </div>
     {% endfor %}
@@ -29,7 +33,7 @@
     <div class="media card my-4"
     style="position:sticky"
     >
-      <p class="card-header">Recent Posts </p>
+      <p class="card-header">Recent Posts</p>
       <div class="list-group">
         {% for post in posts %}
           <a href="{{ post.get_absolute_url }}" class="list-group-item list-group-item-action">
