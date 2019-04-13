@@ -8,9 +8,9 @@
     <a href="{% url 'posts:post-delete' instance.id %}" class="btn btn-danger"> Delete </a>
     <a href="{% url 'posts:post-update' instance.id %}" class="btn btn-secondary">Edit Post</a>
     {% endif %}
-    <h1 class="mt-4">
+    <h3 class="mt-4">
       {{ instance.title }}
-    </h1>
+    </h3>
     {% if instance.image %}
 
     <img src="{{ instance.image.url }}" class="img-fluid" />
