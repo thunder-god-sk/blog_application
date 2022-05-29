@@ -1,17 +1,84 @@
-<mxfile host="app.diagrams.net" modified="2022-05-29T09:12:26.149Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36" etag="BSLYugfjCk75hKnbjF4B" version="18.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-29T09:37:15.055Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36" etag="2SlLkgfS6JO63u_4xHAK" version="18.1.3" type="github">
   <diagram id="JL7E_yxkcli_PubJaaRR" name="Page-1">
-    <mxGraphModel dx="946" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1720" dy="1136" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="dBdENm1m749CC2_r2nhW-1" value="" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="640" y="310" width="60" height="60" as="geometry" />
+          <mxGeometry x="1290" y="300" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dBdENm1m749CC2_r2nhW-2" value="Managed MYSQL cluster" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="610" y="380" width="140" height="20" as="geometry" />
+          <mxGeometry x="1250" y="400" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.21;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dBdENm1m749CC2_r2nhW-3" target="dBdENm1m749CC2_r2nhW-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.8;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="dBdENm1m749CC2_r2nhW-3" target="dBdENm1m749CC2_r2nhW-10">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dBdENm1m749CC2_r2nhW-3" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="300" y="280" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-4" value="API Gateway&lt;br&gt;(Nginx Reverse Proxy&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="270" y="390" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=20;" edge="1" parent="1" source="dBdENm1m749CC2_r2nhW-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-6" value="" style="image;html=1;image=img/lib/clip_art/computers/Server_Rack_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="450" y="180" width="60" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-9" value="Python APIs Server 0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="430" y="280" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.359;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=20;" edge="1" parent="1" source="dBdENm1m749CC2_r2nhW-10" target="dBdENm1m749CC2_r2nhW-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-10" value="" style="image;html=1;image=img/lib/clip_art/computers/Server_Rack_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="70" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-11" value="Python APIs Server 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="420" y="470" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-20" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="742" as="sourcePoint" />
+            <mxPoint x="640" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-21" value="Logic Layer" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=-90;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="600" y="375" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-22" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.smtp_server;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="724" y="100" width="76" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-25" value="SMTP Server&lt;br style=&quot;font-size: 16px;&quot;&gt;(external)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="700" y="200" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-26" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.external_sdk;" vertex="1" parent="1">
+          <mxGeometry x="930" y="100" width="68" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-27" value="Ably SDK for realtime&lt;br&gt;&amp;nbsp;communication&lt;br&gt;(external)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="880" y="190" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.51;entryY=-0.137;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=16;" edge="1" parent="1" source="dBdENm1m749CC2_r2nhW-28" target="dBdENm1m749CC2_r2nhW-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;fontSize=16;" edge="1" parent="1" source="dBdENm1m749CC2_r2nhW-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;" edge="1" parent="1" source="dBdENm1m749CC2_r2nhW-28" target="dBdENm1m749CC2_r2nhW-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-28" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/boxicons-logos/24/bxl-django-128.png;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="820" y="457" width="128" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="dBdENm1m749CC2_r2nhW-29" value="Django for Backend Services&lt;br&gt;and REST APIs" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="795" y="575" width="200" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
